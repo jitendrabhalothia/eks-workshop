@@ -13,19 +13,20 @@ kubectl{kubectl}
     api(API Server)
     controller(Controller Manager)
     scheduler(Scheduler)
-    etcd(etcd)
+    (etcd)
   end
     subgraph worker1
       kubelet1(kubelet)
       kube-proxy1(kube-proxy)
       subgraph docker1
+        (etcd)
         subgraph podA
           containerA[container]
         end
         subgraph podB
           containerB[container]
         end
-      end
+      endetcd
     end
 
   internet-->kube-proxy1
